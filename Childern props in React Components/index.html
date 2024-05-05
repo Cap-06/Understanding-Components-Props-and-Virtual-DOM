@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your ItemList component code will go here
+    
+     // Defining the Image component
+     function Image({ src }) {
+      return (
+        <img src={src} alt="Gallery Image" style={{ width: "100%", height: "auto" }} />
+      );
+    }
+
+    // Defining the Gallery component
+    function Gallery({ children }) {
+      return (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "10px" }}>
+          {children}
+        </div>
+      );
+    }
+
+    // Render the Gallery component with Image components as children
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+      <Gallery>
+
+        <Image src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTM2NjcxMC1pbWFnZS1rd3Z4eGVxcC5qcGc.jpg" />
+
+        <Image src="https://img.freepik.com/free-photo/ultra-detailed-nebula-abstract-wallpaper-4_1562-749.jpg" />
+
+        <Image src="https://i.pinimg.com/originals/66/be/79/66be7922881ea8c3bcb1bd40ba12a797.jpg" />
+        <Image src="https://c4.wallpaperflare.com/wallpaper/375/565/78/fantastic-universe-mz-space-stars-galaxies-ultra-hd-desktop-wallpaper-preview.jpg" />
+
+        <Image src="https://wallpapers.com/images/featured/galaxy-background-gixaqtvgmxz0eli2.jpg" />
+        <Image src="https://images.wallpaperscraft.com/image/single/galaxy_night_starry_sky_118126_300x168.jpg" />
+
+        <Image src="https://c4.wallpaperflare.com/wallpaper/17/922/351/space-astronaut-stars-galaxy-wallpaper-thumb.jpg" />
+
+        <Image src="https://backiee.com/static/wallpapers/560x315/355450.jpg" />
+
+
+      </Gallery>
+    );
+  </script>
+</body>
+</html>
